@@ -70,15 +70,22 @@
                 </div>
                 <!-- Display Name -->
                 <div class="mt-4" x-transition>
-                    <x-jet-label>
-                        Credit to
-                    </x-jet-label>
-                    <x-jet-input wire:model.defer="authorDisplayName"
-                                type="text"
-                                class="block w-full mt-1  text-gray-500 "
-                                disabled
-                    />
-                    <small class="text-gray-500"><x-button flat href="login" class="text-primary-500" label="Make an account to change name"/></small>
+
+                    <div class="text-gray-500 text-sm flex">
+                        <x-icon name="exclamation-circle" class="w-4 h-4"/>
+
+                        <span>
+                            Posting
+                            @auth()
+                            as <strong>{{ auth()->user()->name  }}</strong>
+
+                            @else
+                            anonymously. <a  href="login" class="text-primary-700 hover:text-primary-800"> Make an account</a> to add a joke with credit.
+                            @endauth
+                        </span>
+
+                    </div>
+
                 </div>
             </div>
         </x-slot>

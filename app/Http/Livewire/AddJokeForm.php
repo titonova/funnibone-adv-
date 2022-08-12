@@ -94,7 +94,7 @@ class AddJokeForm extends Component
             'punchline' => $this->punchline,
             'joke_format' => $this->jokeFormat,
             'authed_author_id' => auth()->id(),
-            'author_display_name' => $this->authorDisplayName,
+            'author_display_name' => auth()->check() ? null :$this->authorDisplayName,
         ]);
 
         $this->addJokeModalIsOpen = false;

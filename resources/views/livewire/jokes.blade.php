@@ -10,7 +10,12 @@
 
             @forelse ($jokes as $joke)
                 <div  class="max-w-6xl px-4 py-4 mb-1 bg-white shadow-md sm:rounded-lg sm:px-6 lg:px-8">
-                    <div><small class="top-0 float-right mb-9 pl-4 text-sm text-[0.7em] text-gray-400">{{ $joke->created_at->diffForHumans(null,false,true) }}</small></div>
+
+                    <small class="top-0 float-right mb-9 pl-4 text-sm text-[0.8em] text-gray-400">
+                        By {{ $joke->getAuthorName() }}
+                        {{ $joke->created_at->diffForHumans(null,false,true) }}
+                    </small>
+
                     <strong>{{ $joke->title ?? '' }}</strong>
                     <p>{{ $joke->body ?? '' }}</p>
                     <p>{{ $joke->punchline ?? '' }}</p>
