@@ -19,6 +19,9 @@
         @livewireStyles
     </head>
     <body class="font-sans antialiased">
+        @auth()
+            @livewire('navigation-menu')
+        @endauth
 
         <x-jet-banner />
         <x-notifications />

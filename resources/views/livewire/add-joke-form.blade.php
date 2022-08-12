@@ -68,6 +68,18 @@
                     />
                     <x-jet-input-error for="punchline" class="mt-2" />
                 </div>
+                <!-- Display Name -->
+                <div class="mt-4" x-transition>
+                    <x-jet-label>
+                        Credit to
+                    </x-jet-label>
+                    <x-jet-input wire:model.defer="authorDisplayName"
+                                type="text"
+                                class="block w-full mt-1  text-gray-500 "
+                                disabled
+                    />
+                    <small class="text-gray-500"><x-button flat href="login" class="text-primary-500" label="Make an account to change name"/></small>
+                </div>
             </div>
         </x-slot>
 

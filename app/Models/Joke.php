@@ -12,5 +12,5 @@ class Joke extends Model
      *
      * @var array
      */
-    protected $fillable = ['title','body','joke_format','punchline'];
+    protected $fillable = ['title','authed_author_id','author_display_name','body','joke_format','punchline'];
 }

@@ -22,7 +22,9 @@ class AddJokeForm extends Component
     public $body;
     public $punchline;
     public $jokeFormat = 'two-liner';
+    public $authorDisplayName;
 
+    const GUEST =  'Guest';
     public function mount()
     {
         $this->exampleJokes = [
@@ -43,6 +45,8 @@ class AddJokeForm extends Component
                 'punchline' => __('The Irishman then handed his drink back to the attendant and said, Me, too, I didnt know we had a choice.')
             ]
         ];
+
+        $this->authorDisplayName = auth()->user()?->name ?? self::GUEST;
     }
 
     public function openAddJokeModal()
@@ -82,12 +86,15 @@ class AddJokeForm extends Component
     }
     public function addJoke(Request $request)
     {
+        //dump($this->authorDisplayName);exit;
         $this->validate();
         Joke::create([
             'title' => $this->title,
             'body' => $this->body,
             'punchline' => $this->punchline,
             'joke_format' => $this->jokeFormat,
+            'authed_author_id' => auth()->id(),
+            'author_display_name' => $this->authorDisplayName,
         ]);
 
         $this->addJokeModalIsOpen = false;

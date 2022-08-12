@@ -15,6 +15,8 @@ return new class extends Migration
     {
         Schema::create('jokes', function (Blueprint $table) {
             $table->id();
+            $table->integer('authed_author_id')->nullable()->references('id')->on('users');
+            $table->string('author_display_name')->nullable();
             $table->string('title')->nullable();
             $table->text('body')->nullable();
             $table->text('punchline')->nullable();
