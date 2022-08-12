@@ -26,6 +26,8 @@
             </div>
             @endforelse
         </div>
+
+        {{ $jokes->links() }}
     </div>
 
 </div>

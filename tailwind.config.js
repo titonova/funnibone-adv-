@@ -9,9 +9,10 @@ module.exports = {
         './storage/framework/views/*.php',
         './resources/views/**/*.blade.php',
 
-        // Tall toasts
-        './vendor/usernotnull/tall-toasts/config/**/*.php',
-        './vendor/usernotnull/tall-toasts/resources/views/**/*.blade.php',
+        // Pagination
+        './vendor/laravel/framework/src/Illuminate/Pagination/resources/views/*.blade.php',
+
+
 
         // WireUI
         './vendor/wireui/wireui/resources/**/*.blade.php',
