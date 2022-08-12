@@ -15,9 +15,10 @@
                         By {{ $joke->getAuthorName() }}
                         {{ $joke->created_at->diffForHumans(null,false,true) }}
                     </small>
-
                     <strong>{{ $joke->title ?? '' }}</strong>
-                    <p>{{ $joke->body ?? '' }}</p>
+                    <x-markdown>
+                        <p>{{ $joke->body ?? '' }}</p>
+                    </x-markdown>
                     <p>{{ $joke->punchline ?? '' }}</p>
                 </div>
             @empty

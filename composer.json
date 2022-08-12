@@ -12,6 +12,7 @@
         "laravel/sanctum": "^3.0",
         "laravel/tinker": "^2.7",
         "livewire/livewire": "^2.5",
+        "spatie/laravel-markdown": "^2.2",
         "usernotnull/tall-toasts": "^1.5",
         "wireui/wireui": "^1.13"
     },
